@@ -7,14 +7,14 @@ const Heart = (props) => {
         case 'heart' :
             return (
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                        <path d="M0.816379 2.44372C2.8997 -0.261066 6.99974 1.33493 6.99974 4.08172C6.99974 1.33493 11.1 -0.261197 13.1837 2.44372C15.3371 5.24006 13.2146 10.1385 6.99987 12.9524C0.785436 10.1385 -1.3371 5.24006 0.816379 2.44372Z" fill="#CD2CB3"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0">
-                        <rect width="14" height="14" fill="white" transform="matrix(-1 0 0 1 14 0)"/>
-                    </clipPath>
-                    </defs>
+                <g clip-path="url(#clip0)">
+                <path d="M0.816356 2.44372C2.89968 -0.261066 6.99972 1.33493 6.99972 4.08172C6.99972 1.33493 11.1 -0.261197 13.1836 2.44372C15.3371 5.24006 13.2146 10.1385 6.99985 12.9524C0.785413 10.1385 -1.33712 5.24006 0.816356 2.44372Z" fill="#D629F2"/>
+                </g>
+                <defs>
+                <clipPath id="clip0">
+                <rect width="14" height="14" fill="white" transform="matrix(-1 0 0 1 14 0)"/>
+                </clipPath>
+                </defs>
                 </svg>
             ) 
         case 'arrow' :
