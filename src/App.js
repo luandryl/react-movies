@@ -1,13 +1,36 @@
 import React, { Component } from 'react';
-import Icon from './assets/icons/Icon'
+
+import Input from './components/input/Input'
+import Nav from './components/nav/Nav'
+import Card from './components/card/Card'
+import Footer from './components/footer/Footer'
 import './App.css';
+
 
 class App extends Component{
 
   render () {
-    const style = {
-      backgroundImage: 'url(https://img.elo7.com.br/product/main/2679A20/big-poster-filme-matrix-lo03-tamanho-90x60-cm-geek.jpg)'
-    }
+    
+    const moviesFakeData = [{
+      title: 'Matrix',
+      duration: '136min',
+      year: '1999',
+      plot: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.",
+      image: 'https://img.elo7.com.br/product/main/2679A20/big-poster-filme-matrix-lo03-tamanho-90x60-cm-geek.jpg'
+    },{
+      title: 'Star Wars: Last Jedi',
+      duration: '134min',
+      year: '1983',
+      plot: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.",
+      image: 'https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/ReturnOfTheJediPoster1983.jpg/250px-ReturnOfTheJediPoster1983.jpg'
+    }]
+
+    const moviesList = moviesFakeData.map(m => {
+      return (
+        <Card movie={m} />
+      )
+    })
+
     return (
       <div className="App center">
 
@@ -15,79 +38,17 @@ class App extends Component{
 
 				<div className="App--task-input center">
 					<h1> Movies App </h1>
-					<div className="task-input--actions center">
-						<input className="App__input" type="text" placeholder="type some movie title" />  
-          </div>
-          <div className="nav--wrapper">
-            <Icon type="list" className="space" /><a href="#"> My list</a>
-          </div>
-          
+					<Input />
+          <Nav />
 				</div>
 
 				<div className="App--task-list center">
-
 						<div className="task--list">
-
-              <div className="task--card">
-                <div className="image-wrapper">
-                  <div className="image" style={style} ></div>
-                </div>
-                <div className="card--content">
-                  <h1>Matrix</h1>
-                  <span>136min - 1999</span>
-                  <div className="card--text">
-                    <h4>Plot</h4>
-                    <p> After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.</p>
-                  </div>
-                  <div className="card--actions">
-                    <div className="star--action">
-                      <h4>Stars</h4>
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                    </div>
-                    <button className="App__button">Add</button>
-                  </div>
-                </div>
-							</div>
-
-              <div className="task--card">
-                <div className="image-wrapper">
-                  <div className="image" style={style} ></div>
-                </div>
-                <div className="card--content">
-                  <h1>Matrix</h1>
-                  <span>136min - 1999</span>
-                  <div className="card--text">
-                    <h4>Plot</h4>
-                    <p> After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.</p>
-                  </div>
-                  <div className="card--actions">
-                    <div className="star--action">
-                      <h4>Stars</h4>
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                    </div>
-                    <button className="App__button">Add</button>
-                  </div>
-                </div>
-							</div>
-
-
+              {moviesList}
 						</div>
-
 				</div>
-
-
 			</div>
-			<div className="App--footer center">
-				<span>make with for </span> <Icon type="heart" className="space" /> <span>unectJr trainees</span>
-			</div> 
+			<Footer />
 		</div>
     ) 
   }
