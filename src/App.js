@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Http } from './services/Http'
+import { Storage } from './services/Storage'
 
 import Input from './components/input/Input'
 import Nav from './components/nav/Nav'
@@ -17,8 +18,12 @@ class App extends Component{
 
   getInput = async (text) => {
     this.setState({isLoading: true})
-    const movies = await Http.getMovies(text)
+    const movies = await Http.loadByTitle(text)
     this.setState({movies, isLoading: false})
+  }
+
+  addFavorite = (id) => {
+    Storage.save(id)
   }
 
   render () {
@@ -27,7 +32,7 @@ class App extends Component{
 
     const moviesList = movies && movies.map((m) => {
       return (
-        <Card movie={m} key={m.id} />
+        <Card movie={m} key={m.id} addFavorite={this.addFavorite}/>
       )
     })
 
@@ -39,7 +44,10 @@ class App extends Component{
 				<div className="App--task-input center">
 					<h1> Movies App </h1>
 					<Input textString={this.getInput} />
-          <Nav />
+          <Nav 
+            path='/favorites/'
+            name='My List' 
+          />
 				</div>
 
 				<div className="App--task-list center">
