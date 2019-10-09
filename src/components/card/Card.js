@@ -27,7 +27,7 @@ const Card = (props) => {
                   <Icon type="star" className="space" />
                   <Icon type="star" className="space" />
                 </div>
-                <button className="App__button">Add</button>
+                <button onClick={() => {props.addFavorite(props.movie.id)}} className="App__button">Add</button>
               </div>
             </div>
         </div>
