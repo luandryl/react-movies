@@ -12,9 +12,6 @@ body {
 	display: flex;
 	align-items: center;
 }
-.space {
-}
-
 
 
 /*
@@ -115,7 +112,7 @@ body {
 */
 .App--task-list {
 	width: inherit;
-	margin-top: 5rem;
+	margin-top: 1rem;
 	justify-content: center;
 	align-items: flex-end;
 }
@@ -130,6 +127,7 @@ body {
 .task--list {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: center;
 	padding-top: 1rem;
 }
 
@@ -211,7 +209,8 @@ body {
 
 .card--actions {
 	display: flex;
-	justify-content: space-between; 
+	justify-content: space-between;
+	flex-grow: 0 1;
 }
 
 /*
