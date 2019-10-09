@@ -6,7 +6,7 @@ const API_URL = 'http://www.omdbapi.com/?apikey=74f1367b&'
     @param title: string que irá ser buscada na api
     @return movies: lista de filmes que compativeis com a string
 */
-const getMovies = async (title) => {
+const loadByTitle = async (title) => {
     let query = `${API_URL}s=${title}`
     const { data } = await axios.get(query)
     
@@ -44,7 +44,7 @@ const injectMovieData = (movies) => {
 const getMovieId = async (id) => {
     const { data } = await axios.get(`${API_URL}i=${id}`)
     return {
-        id: id(),
+        id: id,
         title: data.Title,
         duration: data.Runtime,
         year: data.Year,
@@ -53,6 +53,28 @@ const getMovieId = async (id) => {
     }
 }
 
+/*
+    @param id: array de imdbID´s
+    @return promise com os filmes salvos;
+*/
+const loadById = (ids) => {
+    const movies = ids.map(async id => {
+        const movie = await getMovieId(id)
+        return movie
+    })
+
+    return new Promise((resolve, reject) => {
+        Promise.all(movies)
+            .then(res => {
+                resolve(res)
+            })
+            .catch(e => {
+                reject(e)
+            })
+    })
+}
+
 export const Http = {
-    getMovies
+    loadByTitle,
+    loadById
 }
