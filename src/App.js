@@ -11,38 +11,23 @@ import './App.css';
 class App extends Component{
 
   state = {
-    data: [],
+    movies: [],
     isLoading: false
   }
 
-  getInput = (text) => {
+  getInput = async (text) => {
     this.setState({isLoading: true})
-    Http.getMovie(text).then(({data}) => {
-      this.setState({data: data.Search}, console.log(this.state.data) )
-    }).catch(e => {
-      console.log(e)
-    })
+    const movies = await Http.getMovies(text)
+    this.setState({movies, isLoading: false})
   }
 
   render () {
     
-    const moviesFakeData = [{
-      title: 'Matrix',
-      duration: '136min',
-      year: '1999',
-      plot: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.",
-      image: 'https://img.elo7.com.br/product/main/2679A20/big-poster-filme-matrix-lo03-tamanho-90x60-cm-geek.jpg'
-    },{
-      title: 'Star Wars: Last Jedi',
-      duration: '134min',
-      year: '1983',
-      plot: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.",
-      image: 'https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/ReturnOfTheJediPoster1983.jpg/250px-ReturnOfTheJediPoster1983.jpg'
-    }]
+    const { movies } = this.state
 
-    const moviesList = moviesFakeData.map((m, i) => {
+    const moviesList = movies && movies.map((m) => {
       return (
-        <Card movie={m} key={i} />
+        <Card movie={m} key={m.id} />
       )
     })
 
