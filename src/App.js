@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
+import { Http } from './services/Http'
 
 import Input from './components/input/Input'
 import Nav from './components/nav/Nav'
 import Card from './components/card/Card'
 import Footer from './components/footer/Footer'
+
 import './App.css';
 
-
 class App extends Component{
+
+  state = {
+    data: [],
+    isLoading: false
+  }
+
+  getInput = (text) => {
+    this.setState({isLoading: true})
+    Http.getMovie(text).then(({data}) => {
+      this.setState({data: data.Search}, console.log(this.state.data) )
+    }).catch(e => {
+      console.log(e)
+    })
+  }
 
   render () {
     
@@ -25,9 +40,9 @@ class App extends Component{
       image: 'https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/ReturnOfTheJediPoster1983.jpg/250px-ReturnOfTheJediPoster1983.jpg'
     }]
 
-    const moviesList = moviesFakeData.map(m => {
+    const moviesList = moviesFakeData.map((m, i) => {
       return (
-        <Card movie={m} />
+        <Card movie={m} key={i} />
       )
     })
 
@@ -38,7 +53,7 @@ class App extends Component{
 
 				<div className="App--task-input center">
 					<h1> Movies App </h1>
-					<Input />
+					<Input textString={this.getInput} />
           <Nav />
 				</div>
 
