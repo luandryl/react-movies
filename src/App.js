@@ -25,9 +25,9 @@ class App extends Component{
     
     const { movies } = this.state
 
-    const moviesList = movies && movies.map((m) => {
+    const moviesList = movies && movies.map((m, i) => {
       return (
-        <Card movie={m} key={m.id} />
+        <Card movie={m} key={i} />
       )
     })
 
