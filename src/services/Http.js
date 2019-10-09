@@ -1,5 +1,4 @@
 import axios from 'axios' 
-import id from 'uuid'
 const API_URL = 'http://www.omdbapi.com/?apikey=74f1367b&'
 
 /*
@@ -44,7 +43,6 @@ const injectMovieData = (movies) => {
 const getMovieId = async (id) => {
     const { data } = await axios.get(`${API_URL}i=${id}`)
     return {
-        id: id(),
         title: data.Title,
         duration: data.Runtime,
         year: data.Year,
