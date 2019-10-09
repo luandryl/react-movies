@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import Icon from '../../assets/icons/Icon'
+import { Link } from 'react-router-dom'
 
-class Nav extends Component {
-
-    render () {
-        return (
-            <div className="nav--wrapper">
-                <Icon type="list" className="space" /><a href="#"> My list</a>
-            </div>
-        )
-    }
-
-} 
+const Nav = (props) => {
+    return (
+        <div className="nav--wrapper">
+            <Link to={props.path}>
+                 {props.name}
+            </Link>
+        </div>
+    )
+}
 
 export default Nav
