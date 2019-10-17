@@ -1,5 +1,4 @@
 import React from 'react'
-import Icon from '../../assets/icons/Icon'
 
 const Card = (props) => {
     const style = {

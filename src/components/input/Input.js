@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 
 class Input extends Component {
-
-    constructor (props) {
-        super(props)
-    }
-
+    
     handleInput = (e) => {
         this.props.textString(e.target.value)
     }
