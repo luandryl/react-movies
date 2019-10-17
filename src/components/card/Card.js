@@ -20,14 +20,6 @@ const Card = (props) => {
                 <p>{props.movie.plot}</p>
               </div>
               <div className="card--actions">
-                <div className="star--action">
-                  <h4>Stars</h4>
-                  <Icon type="star" className="space" />
-                  <Icon type="star" className="space" />
-                  <Icon type="star" className="space" />
-                  <Icon type="star" className="space" />
-                  <Icon type="star" className="space" />
-                </div>
                 <button className="App__button">Add</button>
               </div>
             </div>
