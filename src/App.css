@@ -1,15 +1,231 @@
 body {
 	background: #1F1F1F;
-}
-.App {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+	font-family: 'Roboto Mono', monospace;
 }
 
-.App h1 {
+
+
+/*
+	utils
+*/
+.center {
+	display: flex;
+	align-items: center;
+}
+
+
+/*
+	app wrappers
+*/
+.App {
+	height: 100vh;
+	flex-flow: column nowrap;
+}
+
+.App--wrapper {
 	color: #fff;
+	flex-grow: 1;
+	flex-flow: column nowrap;
+	width: 100%;
+}
+
+
+
+/* 
+	Input and buttons
+*/
+.App--task-input {
+	width: inherit;
+	flex-flow: column nowrap;
+	margin-top: 3rem;
+}
+.nav--wrapper {
+	width: 40%;
+	padding: 1rem 0 1rem 1rem;
+}
+.nav--wrapper a {
+	font-family: 'Roboto Mono';
+	color: #D629F2;
+	margin-bottom: 5rem;
+}
+.nav--wrapper a:hover {
+	color: rgb(180, 36, 202)
+}
+.task-input--actions {
+	width: inherit;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+.App__input {
+	background: #fff;
+	color: #1F1F1F;
+	width: 40%;
+	font-size: 1.125rem;
+	padding: 1rem 0 1rem 1rem;
 	font-family: 'Roboto Mono', monospace;
-	font-size: 5rem;
+}
+/*
+	inputs placeholder config
+*/
+::-webkit-input-placeholder { /* Edge */
+	font-family: 'Roboto Mono', monospace;
+	color: #B4B4B4
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-family: 'Roboto Mono', monospace;
+	color: #B4B4B4
+}
+
+::placeholder {
+	font-family: 'Roboto Mono', monospace;
+	color: #B4B4B4
+}
+
+.App--task-input h1{
+	color: #fff;
+	font-size: 4.5rem;
+
+}
+
+.App__button {
+	background: #D629F2;
+	color: #fff;
+	font-family: Roboto Mono;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 12px;
+	padding: .5rem .8rem;
+	transition: ease .5s;
+	cursor: pointer;
+}
+.App__button:hover {
+	background: rgb(172, 83, 185);
+}
+
+
+
+/*
+	TaskList
+*/
+.App--task-list {
+	width: inherit;
+	margin-top: 1rem;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+
+.task--list-wrapper h1 {
+	color: #fff;
+	font-size: 2.25rem;
+	text-align: center;
+}
+
+.task--list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding-top: 1rem;
+}
+
+.task--card {
+	background: #fff;
+	color: #1F1F1F;
+	width: 285px;
+	margin-bottom: 1rem;
+	transition: ease .5s;
+	cursor: pointer;
+	margin-right: 1.2rem;
+	display: flex;
+	flex-flow: column nowrap;
+}
+.task--card:hover {
+	transform: scale(1.08,1.08);
+	margin-bottom: 2rem;
+	margin-right: 1.5rem;
+	margin-left: 1rem;
+}
+.image-wrapper {
+	position: relative;
+	display: block;
+	height: 261px;
+}
+.card--content {
+	padding: 1rem;
+}
+.image {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 261px;
+    width: 285px;
+    background-size: 100%;
+}
+
+.card--content h1 {
+	font-family: Roboto Mono;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	color: #000000;
+}
+
+.card--content span {
+	font-family: Roboto Mono;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 15px;
+	color: #737373;
+}
+
+.card--text {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.card--content h4 {
+	font-family: Roboto Mono;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 13px;
+	color: #000000;
+}
+
+.card--text p {
+	font-family: Roboto Mono;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11px;
+	line-height: 13px;
+	text-align: justify;
+	color: #737373;
+}
+
+.card--actions {
+	display: flex;
+	justify-content: space-between;
+	flex-grow: 0 1;
+}
+
+/*
+	App footer bar
+*/
+.App--footer {
+	background: #fff;
+	width: 100%;
+	height: 60px;
+	align-self: flex-end;
+	justify-content: center;
+}
+
+.App--footer span {
+	font-size: 1.125rem;
+	margin-left: 5px;
+	margin-right: 5px;
 }
