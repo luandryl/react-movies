@@ -40,14 +40,6 @@ class App extends Component{
                     <p> After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.</p>
                   </div>
                   <div className="card--actions">
-                    <div className="star--action">
-                      <h4>Stars</h4>
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                    </div>
                     <button className="App__button">Add</button>
                   </div>
                 </div>
@@ -65,14 +57,6 @@ class App extends Component{
                     <p> After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.</p>
                   </div>
                   <div className="card--actions">
-                    <div className="star--action">
-                      <h4>Stars</h4>
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                      <Icon type="star" className="space" />
-                    </div>
                     <button className="App__button">Add</button>
                   </div>
                 </div>
