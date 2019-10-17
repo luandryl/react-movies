@@ -24,6 +24,7 @@ class App extends Component{
 
   addFavorite = (id) => {
     Storage.save(id)
+    window.alert('Movie added as favorite')
   }
 
   render () {
