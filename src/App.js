@@ -25,9 +25,9 @@ class App extends Component{
       image: 'https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/ReturnOfTheJediPoster1983.jpg/250px-ReturnOfTheJediPoster1983.jpg'
     }]
 
-    const moviesList = moviesFakeData.map(m => {
+    const moviesList = moviesFakeData.map((m,i) => {
       return (
-        <Card movie={m} />
+        <Card movie={m} key={i}/>
       )
     })
 

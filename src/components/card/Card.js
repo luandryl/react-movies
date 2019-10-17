@@ -1,8 +1,6 @@
 import React from 'react'
-import Icon from '../../assets/icons/Icon'
 
 const Card = (props) => {
-    console.log(props)
     const style = {
         backgroundImage: 'url('+props.movie.image+')'
     }
