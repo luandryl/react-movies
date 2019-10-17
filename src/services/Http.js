@@ -21,9 +21,8 @@ const loadByTitle = async (title) => {
 */
 const injectMovieData = (movies) => {
     if (movies) {
-      const moviesArr = movies.map(async m => {
-          const movie = await getMovieId(m.imdbID)
-          return movie
+      const moviesArr = movies.map(m => {
+          return getMovieId(m.imdbID)
       })
       return new Promise((resolve, reject) => {
           Promise.all(moviesArr)
