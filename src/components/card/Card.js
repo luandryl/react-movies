@@ -19,15 +19,13 @@ const Card = (props) => {
                 <p>{props.movie.plot}</p>
               </div>
               <div className="card--actions">
-                <div className="star--action">
-                  <h4>Stars</h4>
-                  <Icon type="star" className="space" />
-                  <Icon type="star" className="space" />
-                  <Icon type="star" className="space" />
-                  <Icon type="star" className="space" />
-                  <Icon type="star" className="space" />
-                </div>
-                <button onClick={() => {props.addFavorite(props.movie.id)}} className="App__button">Add</button>
+                {props.removeFav && 
+                  (<button onClick={() => {props.removeFav(props.movie.id)}} className="App__button">Remove</button>
+                )}
+                {props.addFavorite && 
+                  (<button onClick={() => {props.addFavorite(props.movie.id)}} className="App__button">Add</button>
+                )}
+                
               </div>
             </div>
         </div>
