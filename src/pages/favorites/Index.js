@@ -12,17 +12,27 @@ class Favorites extends Component {
         movies: []
     }
 
-    componentDidMount = async () => {
+    removeFavorite = (id) => {
+        Storage.remove(id)
+        window.alert('Movie removed from favorites')
+        this._loadData()
+    }
+    
+    _loadData = async () => {
         const moviesIDs = Storage.load()
         const movies = await Http.loadById(moviesIDs)
         this.setState({movies})
+    }
+
+    componentDidMount = async () => {
+        this._loadData()
     }
     
     render () {
         const { movies } = this.state
         const moviesList = movies && movies.map((m) => {
             return (
-              <Card movie={m} key={m.id} addFavorite={this.addFavorite}/>
+              <Card movie={m} key={m.id} removeFav={this.removeFavorite}/>
             )
           })
         return ( 
