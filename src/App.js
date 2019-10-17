@@ -19,7 +19,7 @@ class App extends Component{
 						<input className="App__input" type="text" placeholder="type some movie title" />  
           </div>
           <div className="nav--wrapper">
-            <Icon type="list" className="space" /><a href="#"> My list</a>
+            <a href="#"> My list</a>
           </div>
           
 				</div>
